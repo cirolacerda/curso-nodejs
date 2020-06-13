@@ -8,5 +8,14 @@ module.exports = {
         const products = await Product.find();
 
         return res.json(products);
+    },
+
+    async store(req, res){
+        // Criando Produtos
+        const product = await Product.create(req.body);
+
+        return res.json(product);
     }
+
+
 };
